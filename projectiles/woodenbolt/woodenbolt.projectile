@@ -1,0 +1,30 @@
+{
+  "projectileName" : "azwoodenbolt",
+  "physics" : "arrow",
+  "image" : "woodenbolt.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "timeToLive" : 30,
+  "pointLight" : false,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/bulletexplosion/bulletexplosion.config"
+    }
+  ],
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "power" : 5.0,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "speed" : 100,
+  "damageKind" : "bow",
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

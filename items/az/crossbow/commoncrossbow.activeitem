@@ -1,0 +1,108 @@
+{
+  "itemName" : "commoncrossbow",
+  "price" : 150,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "Shoots bolts.",
+  "shortdescription" : "Common Crossbow",
+  "tooltipKind" : "gun",
+  "category" : "crossbow",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","ranged","crossbow"],
+  "level" : 1,
+  
+  //"handPosition" : [3, 0],
+  //"firePosition" : [-2, 9],
+  //"hands" : [2, 2],
+  //"recoilTime" : 0.1,
+  
+  //"muzzleFlashes" : [
+  //  "/animations/muzzleflash/blankmuzzle/blankmuzzle.animation"
+  //],
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : { },
+  "animationCustom" : { },
+  "baseOffset" : [-1.45, 0.1],
+  "muzzleOffset" : [0.0, 0.3],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : [0.6, 1.4],
+    "baseDps" : [6, 7],
+    "energyUsage" : [14, 19],
+    "inaccuracy" : 0.008,
+
+    "projectileType" : "azwoodenbolt",
+    "projectileParameters" : {
+      "knockbackRange" : [10, 30]
+    },
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.25,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+  "fireSounds" : [ "/sfx/gun/crossbow1.ogg" ],
+
+  "builder" : "/items/buildscripts/buildweapon.lua",
+  "builderConfig" : [{
+    "nameGenerator" : "/items/az/crossbow/crossbownames.config:nameGen",
+    "animationParts" : {
+      "butt" : {
+        "path" : "/items/az/crossbow/butt/<variant>.png",
+        "variants" : 3,
+        "paletteSwap" : true
+      },
+      "middle" : {
+        "path" : "/items/az/crossbow/middle/<variant>.png",
+        "variants" : 3,
+        "paletteSwap" : true
+      },
+      "barrel" : {
+        "path" : "/items/az/crossbow/barrel/<variant>.png",
+        "variants" : 3,
+        "paletteSwap" : true
+      },
+      "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash.png"
+    },
+    "gunParts" : ["butt", "middle", "barrel"],
+    "altAbilities" : [
+      "trishot",
+      "piercingbolt"
+    ],
+	
+    "palette" : "/items/az/crossbow/crossbow.weaponcolors",
+    "iconDrawables" : ["butt", "middle", "barrel"]
+  }]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "op": "add",
+    "path": "/trishot",
+    "value": "/items/az/abilities/trishot/trishot.weaponability"
+  },
+  {
+    "op": "add",
+    "path": "/piercingbolt",
+    "value": "/items/az/abilities/piercingbolt/piercingbolt.weaponability"
+  },
+    {
+      "op": "add",
+      "path": "/hookbolt",
+      "value": "/items/az/unrand/hookbow/hookbolt.weaponability"
+    }
+]

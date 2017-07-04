@@ -1,0 +1,65 @@
+{
+  "animationParts" : { },
+  "animationCustom" : {
+    "particleEmitters" : {
+      "altMuzzleFlash" : {
+        "active" : false,
+        "emissionRate" : 8,
+        "transformationGroups" : ["muzzle"],
+        "offsetRegion" : [0, 0, 0, 0],
+        "particles" : [
+          { "particle" : "piercingspark"},
+          { "particle" : "piercingspark"},
+          { "particle" : "piercingspark"},
+          { "particle" : "piercingspark"},
+          { "particle" : "piercingspark"},
+          { "particle" : "piercingspark"}
+        ]
+      }
+    },
+    "sounds" : {
+      "altFire" : [ "/sfx/az/crossbowalt1.ogg" ]
+    }
+  },
+
+  "ability" : {
+    "name" : "Piercing Bolt",
+    "type" : "piercingbolt",
+    "scripts" : ["/items/active/weapons/ranged/abilities/altfire.lua"],
+    "class" : "AltFireAttack",
+
+    "elementalConfig" : {
+      "physical" : { "projectileType" : "azwoodenbolt" },
+      "fire" : { "projectileType" : "azflameboltrp"},
+      "electric" : { "projectileType" : "azelecboltrp"},
+      "ice" : { "projectileType" : "aziceboltrp"},
+      "poison" : { "projectileType" : "azpoisonboltrp"}
+    },
+
+    // use baseDps and fireTime from primary fire
+
+    "baseDamageMultiplier" : 1.3,
+    "energyUsage" : 40,
+
+    "stances" : {
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.11,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  }
+}

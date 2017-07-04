@@ -1,0 +1,68 @@
+{
+  "animationParts" : { },
+  "animationCustom" : {
+    "particleEmitters" : {
+      "altMuzzleFlash" : {
+        "active" : false,
+        "emissionRate" : 8,
+        "transformationGroups" : ["muzzle"],
+        "offsetRegion" : [0, 0, 0, 0],
+        "particles" : [
+          { "particle" : "piercingspark"},
+          { "particle" : "piercingspark"},
+          { "particle" : "piercingspark"},
+          { "particle" : "piercingspark"},
+          { "particle" : "piercingspark"},
+          { "particle" : "piercingspark"}
+        ]
+      }
+    },
+    "sounds" : {
+      "altFire" : [ "/sfx/az/crossbowalt1.ogg" ]
+    }
+  },
+
+  "ability" : {
+    "name" : "Tri-Shot",
+    "type" : "trishot",
+    "scripts" : ["/items/active/weapons/ranged/abilities/altfire.lua"],
+    "class" : "AltFireAttack",
+
+    "elementalConfig" : {
+      "physical" : { "projectileType" : "azwoodenbolt" },
+      "fire" : { "projectileType" : "azflameboltr" },
+      "electric" : { "projectileType" : "azelecboltr" },
+      "ice" : { "projectileType" : "aziceboltr" },
+      "poison" : { "projectileType" : "azpoisonboltr" }
+    },
+
+    // use baseDps and fireTime from primary fire
+
+    "baseDamageMultiplier" : 1.0,
+    "energyUsage" : 40,
+    "fireTime" : 1.8,
+    "projectileCount" : 3,
+    "inaccuracy" : 0.12,
+
+    "stances" : {
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.11,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  }
+}
